@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-glassfish:deploy</actionName>
+            <displayName>glassfish:deploy</displayName>
+            <goals>
+                <goal>glassfish:deploy</goal>
+            </goals>
+        </action>
+    </actions>
