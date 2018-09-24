@@ -23,3 +23,6 @@
 hs_err_pid*
 /maven-ea-web/nbproject/
 /maven-ea-ejb/nbproject/
+/maven-ea-web/target/
+/maven-ea-ejb/target/
+/maven-ea-ear/target/
