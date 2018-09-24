@@ -35,12 +35,12 @@ public class CustomerEJBTest {
     
     
     public CustomerEJBTest() {
-        try {
+       /* try {
             context = EJBContainer.createEJBContainer().getContext();
             service = (ProductFacadeLocal) context.lookup("java:global/classes/ProductFacadeLocal");
         } catch (NamingException ex) {
             Logger.getLogger(CustomerEJBTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }
     
     @BeforeClass
