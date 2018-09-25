@@ -5,7 +5,6 @@
  */
 package com.sample.rest;
 
-import com.sample.ejb.ProductFacade;
 import com.sample.ejb.ProductFacadeLocal;
 import com.sample.model.Product;
 import java.math.BigDecimal;

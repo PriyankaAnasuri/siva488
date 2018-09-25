@@ -11,7 +11,7 @@
     <module>maven-ea-web</module>
     <module>maven-ea-ejb</module>
   </modules>
-  <properties>
+ <!-- <properties>
     <glassfish.domain.home>C:/Users/esaenz/Desarrollo/glassfish-4.1.1/glassfish4/glassfish</glassfish.domain.home>
     <glassfish.domain.name>domain1</glassfish.domain.name>
     <glassfish.domain.host>localhost</glassfish.domain.host>
@@ -19,10 +19,10 @@
     <glassfish.domain.adminPort>4848</glassfish.domain.adminPort>
     <glassfish.adminUser>admin</glassfish.adminUser>
     <glassfish.passwordFile>${glassfish.domain.home}/domains/${glassfish.domain.name}/config/domain-passwords</glassfish.passwordFile>
-  </properties>
+  </properties>-->
   <build>
     <plugins>
-        <plugin>
+        <!-- <plugin>
             <groupId>org.glassfish.maven.plugin</groupId>
             <artifactId>maven-glassfish-plugin</artifactId>
             <version>2.1</version>
@@ -43,7 +43,7 @@
                     </component>
                 </components>
             </configuration>
-        </plugin>
+        </plugin> -->
         <plugin>
             <groupId>org.wildfly.plugins</groupId>
             <artifactId>wildfly-maven-plugin</artifactId>
