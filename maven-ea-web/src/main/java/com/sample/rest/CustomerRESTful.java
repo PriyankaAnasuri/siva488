@@ -5,9 +5,10 @@
  */
 package com.sample.rest;
 
+import com.sample.ejb.CustomerFacadeLocal;
 import com.sample.ejb.ProductFacade;
 import com.sample.ejb.ProductFacadeLocal;
-import com.sample.model.Product;
+import com.sample.model.Customer;
 import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.EJB;
@@ -17,7 +18,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PUT;
 import javax.enterprise.context.RequestScoped;
+import javax.persistence.Column;
+import javax.validation.constraints.Size;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.POST;
 import javax.ws.rs.PathParam;
@@ -29,54 +33,54 @@ import javax.ws.rs.core.MediaType;
  *
  * @author esaenz
  */
-@Path("products")
+@Path("customers")
 @RequestScoped
-public class ProductRESTFul {
+public class CustomerRESTful {
 
     @Context
     private UriInfo context;
-    
+
     @EJB
-    private ProductFacadeLocal service;
+    private CustomerFacadeLocal service;
 
     /**
-     * Creates a new instance of ProductRESTFul
+     * Creates a new instance of CusromerRESTful
      */
-    public ProductRESTFul() {
+    public CustomerRESTful() {
     }
 
     /**
-     * Retrieves representation of an instance of com.sample.rest.ProductRESTFul
+     * Retrieves representation of an instance of
+ com.sample.rest.CustomerRESTful
+     *
      * @return an instance of java.lang.String
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Product> list() {
+    public List<Customer> list() {
         return service.findAll();
     }
 
-    
-    
     @POST
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void create(@QueryParam("purchaseCost") BigDecimal purchaseCost,
-            @QueryParam("quantityOnHand") Integer quantityOnHand,
-            @QueryParam("markup") BigDecimal markup,
-            @QueryParam("available") String available,
-            @QueryParam("description") String description,
-            @QueryParam("manufacturerId") Integer manufacturerId,
-            @QueryParam("prodCode") String prodCode) {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
+    public void create(@QueryParam("name") String name,
+            @QueryParam("addressline1") String addressline1,
+            @QueryParam("addressline2") String addressline2,
+            @QueryParam("city") String city,
+            @QueryParam("state") String state,
+            @QueryParam("phone") String phone,
+            @QueryParam("fax") String fax,
+            @QueryParam("email") String email,
+            @QueryParam("creditLimit")Integer creditLimit) {
+        
     }
 
-    
     @DELETE
     @Path("/delete/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public void delete(@PathParam("id") Integer id) {
         service.remove(service.find(id));
     }
-    
+
 }
